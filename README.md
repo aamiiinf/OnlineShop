@@ -8,7 +8,7 @@ cd OnlineShop
 php artisan serve
 
 ```
-## Starting Laravel development server
+## Starting Laravel Development Server
 
 http://127.0.0.1:8000
 
