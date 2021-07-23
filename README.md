@@ -5,6 +5,12 @@ git clone https://github.com/aamiiinf/OnlineShop.git
 
 cd OnlineShop
 
+copy .env from .env.example and edit database informations
+
+create database online_shop
+
+composer install
+
 php artisan serve
 
 ```
