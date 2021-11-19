@@ -1,0 +1,25 @@
+@media screen and (max-width: 750px) {
+  .ares {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .ares {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .ares {
+    font-size: 8px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .ares {
+    font-size: 5px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .ares {
+    font-size: 3px;
+  }
+}
