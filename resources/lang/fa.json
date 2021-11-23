@@ -94,5 +94,10 @@
   "user_platform":"پلتفرم",
   "user_browser":"مرورگر",
   "visits":"بازدید ها",
-  "reports":"گزارشات"
+  "reports":"گزارشات",
+  "category":"دسته بندی",
+  "categoryـtype":"نوع دسته بندی",
+  "subset":"زیر مجموعه",
+  "above":"بالاسری",
+  "new_category":"دسته بندی جدید"
 }

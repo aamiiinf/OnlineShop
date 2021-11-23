@@ -92,5 +92,11 @@
   "user_platform":"Platform",
   "user_browser":"Browser",
   "visits":"Visits",
-  "reports":"Reports"
+  "reports":"Reports",
+  "category":"Category",
+  "category":"Category",
+  "subset":"Subset",
+  "above":"Above",
+  "categoryـtype":"Category type",
+  "new_category":"New category"
 }

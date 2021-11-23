@@ -21,6 +21,16 @@
     @endif
 </div>
 
+<!-- Category type Field -->
+<div class="col-sm-12">
+    <label>{{__('categoryـtype')}}</label>
+    @if($category->parent_id == 0)
+    <span class="badge badge-dark">{{__('above')}}</span>
+    @else
+    <span class="badge badge-secondary">{{__('subset')}}</span>
+    @endif
+</div>
+
 <!-- Created At Field -->
 <div class="col-sm-12">
     <label>{{__('created_at')}}</label>

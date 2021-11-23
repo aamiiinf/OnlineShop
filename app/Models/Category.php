@@ -26,12 +26,11 @@ class Category extends Model
 
     protected $dates = ['deleted_at'];
 
-
-
     public $fillable = [
         'name',
         'slug',
-        'status'
+        'status',
+        'parent_id'
     ];
 
     /**
@@ -54,6 +53,11 @@ class Category extends Model
         'name' => 'required',
         'slug' => 'required'
     ];
+
+    public function parent()
+    {
+        return $this->belongsTo(Category::class);
+    }
 
     public function posts()
     {

@@ -6,6 +6,7 @@ use App\Http\Requests\CreateCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use App\Repositories\CategoryRepository;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Category;
 use App\Models\Lang;
 use App\Models\Setting;
 use Illuminate\Support\Facades\App;
@@ -33,11 +34,12 @@ class CategoryController extends AppBaseController
     public function index(Request $request)
     {
         $categories = $this->categoryRepository->paginate(10);
+        $subcategories = Category::with('parent')->whereNotNull('parent_id')->get();
         $locale = Lang::find(1);
         $setting = Setting::find(1);
         App::setLocale($locale->lang);
 
-        return view('categories.index', compact('categories', 'setting'));
+        return view('categories.index', compact('categories', 'setting', 'subcategories'));
     }
 
     /**
@@ -47,11 +49,12 @@ class CategoryController extends AppBaseController
      */
     public function create()
     {
+        $categories = Category::get();
         $locale = Lang::find(1);
         $setting = Setting::find(1);
         App::setLocale($locale->lang);
 
-        return view('categories.create', compact('setting'));
+        return view('categories.create', compact('setting', 'categories'));
     }
 
     /**
@@ -117,6 +120,7 @@ class CategoryController extends AppBaseController
     public function edit($id)
     {
         $category = $this->categoryRepository->find($id);
+        $categories = Category::get();
         $locale = Lang::find(1);
         $setting = Setting::find(1);
         App::setLocale($locale->lang);
@@ -127,7 +131,7 @@ class CategoryController extends AppBaseController
             return redirect(route('categories.index'));
         }
 
-        return view('categories.edit', compact('setting', 'category'));
+        return view('categories.edit', compact('setting', 'category', 'categories'));
     }
 
     /**

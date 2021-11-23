@@ -19,13 +19,11 @@ class MainController extends Controller
         $setting->hit +=1;
         $setting->update();
         $categories = Category::all();
+        $subcategories = Category::with('parent')->whereNotNull('parent_id')->get();
         $tags = Tag::all();
         $posts = Post::all();
-        $posts_a = Post::orderBy('id', 'DESC')->paginate(10);
-        $posts_b = Post::orderBy('id', 'DESC')->paginate(4);
-        $posts_c = Post::orderBy('id', 'DESC')->paginate(9);
 
-        return view('front/index', compact('setting', 'categories', 'posts_a', 'posts_b', 'posts_c', 'tags', 'posts'));
+        return view('front/index', compact('setting', 'categories', 'tags', 'posts', 'subcategories'));
     }
 
     public function post($id)
@@ -100,7 +98,9 @@ class MainController extends Controller
     public function cart()
     {
       $setting = Setting::find(1);
+      $categories = Category::all();
+      $subcategories = Category::with('parent')->whereNotNull('parent_id')->get();
 
-      return view('front/Cart', compact('setting'));
+      return view('front/Cart', compact('setting', 'subcategories', 'categories'));
     }
 }

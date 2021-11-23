@@ -35,7 +35,6 @@
         @endif>
             <div class="card-body p-0">
                 @include('categories.table')
-
                 <div class="card-footer clearfix">
                     <div class="float-left">
                         {{ $categories->links() }}

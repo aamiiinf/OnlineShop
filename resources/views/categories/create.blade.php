@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1>{{__('create_post')}}</h1>
+                    <h1>{{__('create_category')}}</h1>
                 </div>
             </div>
         </div>
