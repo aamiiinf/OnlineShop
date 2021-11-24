@@ -22,10 +22,46 @@
     {!! Form::text('body', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Product type Field -->
+<div class="form-group col-sm-6">
+    <label>{{__('product_type')}}</label>
+    {!! Form::select('product_type', ['1' => 'Virtual', '2' => 'Download'], null, ['class' => 'form-control custom-select']) !!}
+</div>
+
+<!-- Weight Field -->
+<div class="form-group col-sm-6">
+    <label>{{__('weight')}}</label>
+    {!! Form::text('weight', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Dimensions Field -->
+<div class="form-group col-sm-6">
+    <label>{{__('dimensions')}}</label>
+    {!! Form::text('dimensions', null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Status Field -->
 <div class="form-group col-sm-6">
     <label>{{__('status')}}</label>
     {!! Form::select('status', ['1' => 'active', '2' => 'inactive'], null, ['class' => 'form-control custom-select']) !!}
+</div>
+
+<!-- Status Field -->
+<div class="form-group col-sm-6">
+    <label>{{__('status_commodity')}}</label>
+    {!! Form::select('status_commodity', ['1' => 'Available', '2' => 'Unavailable'], null, ['class' => 'form-control custom-select']) !!}
+</div>
+
+<!-- Status Price -->
+<div class="form-group col-sm-6">
+    <label>{{__('price')}}</label>
+    {!! Form::text('price', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Status Special sale price -->
+<div class="form-group col-sm-6">
+    <label>{{__('price_2')}}</label>
+    {!! Form::text('price_2', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Category Field -->
@@ -54,6 +90,18 @@
     </select>
 </div>
 
+<!-- Commodity ID Field -->
+<div class="form-group col-sm-6">
+    <label>{{__('commodity_id')}}</label>
+    {!! Form::text('commodity_id', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Color Field -->
+<div class="form-group col-sm-6">
+    <label>{{__('color')}}</label>
+{!! Form::text('color', null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Image Field -->
 <div class="form-group col-sm-6">
     <label>{{__('image')}}</label>
@@ -64,4 +112,5 @@
         </div>
     </div>
 </div>
+
 <div class="clearfix"></div>

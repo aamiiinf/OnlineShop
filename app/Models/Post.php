@@ -45,6 +45,14 @@ class Post extends Model
         'status',
         'hit',
         'user_id',
+        'commodity_id',
+        'color',
+        'status_commodity',
+        'product_type',
+        'price',
+        'price_2',
+        'dimensions',
+        'weight',
         'image'
     ];
 
@@ -59,7 +67,15 @@ class Post extends Model
         'discription' => 'string',
         'body' => 'string',
         'status' => 'integer',
+        'dimensions' => 'string',
+        'weight' => 'integer',
         'hit' => 'integer',
+        'commodity_id' => 'integer',
+        'product_type' => 'integer',
+        'color' => 'string',
+        'status_commodity' => 'integer',
+        'price' => 'string',
+        'price_2' => 'string',
         'image' => 'string'
     ];
 
@@ -73,7 +89,15 @@ class Post extends Model
         'slug' => 'required',
         'discription' => 'required',
         'body' => 'required',
-        'image' => 'required'
+        'image' => 'required',
+        'commodity_id' => 'required',
+        'product_type' => 'required',
+        'color' => 'required',
+        'status_commodity' => 'required',
+        'price' => 'required',
+        'price_2' => 'required',
+        'dimensions' => 'required',
+        'weight' => 'required'
     ];
 
 

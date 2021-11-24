@@ -26,7 +26,15 @@ class PostRepository extends BaseRepository
         'status',
         'hit',
         'user_id',
-        'image'
+        'image',
+        'commodity_id',
+        'color',
+        'status_commodity',
+        'product_type',
+        'price',
+        'price_2',
+        'dimensions',
+        'weight'
     ];
 
     /**

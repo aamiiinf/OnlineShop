@@ -55,7 +55,7 @@
         @endforeach
         @else
             <div>
-                <h3>موردی یافت نشد</h3>
+                <h3>{{__('nothing_found')}}</h3>
             </div>
         @endif
         </tbody>

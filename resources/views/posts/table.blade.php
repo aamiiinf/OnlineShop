@@ -3,10 +3,11 @@
         <thead>
         <tr>
             <th>{{__('name')}}</th>
-            <th>{{__('slug')}}</th>
+            <th>{{__('status_commodity')}}</th>
             <th>{{__('body')}}</th>
             <th>{{__('categories')}}</th>
             <th>{{__('tags')}}</th>
+            <th>{{__('price')}}</th>
             <th>{{__('status')}}</th>
             <th><img src="https://img.icons8.com/ios-glyphs/15/000000/visible--v1.png"/></th>
             <th>{{__('image')}}</th>
@@ -19,7 +20,12 @@
                     <tr>
                         <td>{{ $post->name }}</td>
                         <td>
-                            <span class="badge badge-info">{{ $post->slug }}</span>
+                          @if($post->status_commodity == 1)
+                              <span class="badge badge-success">{{__('available')}}</span>
+                          @endif
+                          @if($post->status_commodity == 2)
+                              <span class="badge badge-danger">{{__('unavailable')}}</span>
+                          @endif
                         </td>
                         <td>{{ $post->body }}</td>
                         <td>
@@ -32,6 +38,7 @@
                                 <span class="badge badge-secondary">{{ $tag }}</span>
                             @endforeach
                         </td>
+                        <td>{{ $post->price }}</td>
                         <td>
                             @if($post->status == 1)
                                 <span class="badge badge-success">{{__('active')}}</span>
@@ -60,7 +67,7 @@
                     </tr>
                 @endforeach
             @else
-                <h3>موردی یافت نشد</h3>
+                <h3>{{__('nothing_found')}}</h3>
             @endif
         </tbody>
     </table>

@@ -20,10 +20,18 @@ class CreatePostsTable extends Migration
             $table->string('slug')->unique();
             $table->text('discription');
             $table->string('body');
+            $table->integer('commodity_id');
+            $table->string('color');
+            $table->integer('weight');
+            $table->string('dimensions');
             $table->integer('status');
+            $table->integer('status_commodity');
+            $table->integer('product_type');
             $table->integer('hit');
             $table->tinyinteger('user_id');
             $table->string('image');
+            $table->string('price');
+            $table->string('price_2');
             $table->timestamps();
             $table->softDeletes();
         });
