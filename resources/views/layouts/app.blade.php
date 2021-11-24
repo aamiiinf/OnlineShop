@@ -115,14 +115,14 @@
 
  <!-- Content Wrapper. Contains page content -->
    <div class="content-wrapper"
-   @if($setting->color == 2)
-   style="background: #696969;color:white;"
-   @endif
-   >
-       <section class="content">
-           @yield('content')
-       </section>
-   </div>
+        @if($setting->color == 2)
+        style="background: #696969;color:white;"
+        @endif
+        >
+    <section class="content">
+      @yield('content')
+    </section>
+  </div>
  <!-- /.content-wrapper -->
  <footer class="main-footer"
  @if($setting->color == 2)

@@ -43,6 +43,7 @@
   "action":"Action",
   "tag_details":"Tag Details",
   "back":"Back",
+  "image_gallery":"Gallery",
   "created_at":"Created At",
   "updated_at":"Updated At",
   "edit_comment":"Edit Comment",

@@ -11,7 +11,7 @@
                   <a class="btn btn-default
                             @if(app()->getLocale()=='fa') float-left @endif
                             @if(app()->getLocale()=='en') float-right @endif"
-                     href="{{ route('tags.index') }}">
+                     href="{{ route('posts.index') }}">
                       {{__('back')}}
                   </a>
                 </div>
@@ -19,7 +19,7 @@
         </div>
     </section>
 
-    <div class="content px-3">
+    <div class="content px-3 pb-3">
         <div class="card"
         @if($setting->color == 2)
         style="background: #808080"

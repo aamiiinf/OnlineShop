@@ -48,7 +48,7 @@
                             @endif
                         </td>
                         <td>{{ $post->hit }}</td>
-                        <td><img height="50" src="{{ asset($post->image) }}"></td>
+                        <td><img class="rounded-circle" height="40" src="{{ asset($post->image) }}"></td>
                         <td width="120">
                             {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'delete']) !!}
                             <div class='btn-group'>
