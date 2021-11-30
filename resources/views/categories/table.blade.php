@@ -41,7 +41,13 @@
       </tr>
     @foreach($subcategories as $subcategory)
       @if($subcategory->parent_id == $category->id)
-      <tr class="bg-light">
+      <tr style="
+                @if($setting->color == 1)
+                background: #E6E6FA;
+                @else
+                background:	#778899;
+                @endif
+                ">
           <td>{{ $subcategory->name }}</td>
           <td>{{ $subcategory->slug }}</td>
           @if($subcategory->parent_id > 0)

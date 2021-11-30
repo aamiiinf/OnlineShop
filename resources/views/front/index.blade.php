@@ -5,42 +5,32 @@
       <div class="container">
          <div class="row">
             <div class="col-md-12">
-               <div class="slider-box">
-                  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                     <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                     </ol>
-                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                           <div class="col-md-6" style="padding-top: 20px;">
-                              <h4>Canon 638044</h4>
-                              <span>دوربین کانن سری 6</span>
-                              <p>دوربین کانن از سری 6 با لنز همراه.قابلیت تصویر برداری اچ دی.قابلیت تنظیم در حالت شب . دارای دو عدد باتری اضافی</p>
-                           </div>
-                           <div class="col-md-6">
-                              <img src="img/p20lite-listimage-black.png" class="w-75" >
-                           </div>
+              <div id="carouseria" style="border-radius: 7px;">
+                @foreach($posts as $post)
+                 @foreach($idea_3 as $i)
+                  @if($post->id == $i)
+                   <div class="carouseria-item" style="background: linear-gradient(to bottom, #00a3d3, #00778d);">
+                      <div class="item-style">
+                        <div class="row">
+                          <div class="col-sm-7">
+                            <h2>{{ $post->name }}</h2>
+                            <p>{{ $post->body }}</p>
+                          </div>
+                          <div class="col-sm-5">
+                            <img src="{{ asset($post->image) }}" />
+                          </div>
                         </div>
-                        <div class="carousel-item">
-                           <div class="col-md-6" style="padding-top: 20px;">
-                              <h4>Huawei Tab G45</h4>
-                              <span>تبلت جی 5 هوآوی</span>
-                              <p>تبلت 10 اینج هوآوی . با قابلیت نصب سه عدد سیمکارت همزمان . دارای شبکه فورجی و اتصال سریع . دارای باتری اتمی و دوربین 13 مگاپیکسل</p>
-                           </div>
-                           <div class="col-md-6">
-                              <img src="img/p20lite-listimage-black.png" class="w-75" >
-                           </div>
-                        </div>
-                     </div>
-                  </div>
+                      </div>
+                   </div>
+                  @endif
+                 @endforeach
+                @endforeach
                </div>
-               <!--slider-box-->
             </div>
          </div>
       </div>
       <!---------------------------------->
-      <div class="container">
+      <div class="container mt-4">
          <div class="row">
             <div class="col-md-3">
                <div class="coopen">
@@ -80,43 +70,23 @@
          <div class="row">
             <div class="col-md-12">
                <div class="one-slider">
-                  <h4>دوربین عکاسی</h4>
-                  <div class="owl-carousel owl-theme ov1">
+                  <h4>{{$idea_1}}</h4>
+                  <div class="owl-carousel owl-theme ov2">
+                    @foreach($posts as $post)
+                    @foreach ($post->categories()->pluck('name') as $cate)
+                      @if($cate == $idea_1)
                      <div class="item">
                         <figure>
-                           <a href=""><img src="img/Canon_EOS_400D.png" class="w-100" /></a>
+                           <a href="{{route('post_page' ,$post->id)}}">
+                             <img src="{{ asset($post->image) }}" class="w-100" />
+                           </a>
                         </figure>
-                        <h5>canon-ef-50mm</h5>
-                        <span>1,200,000 تومان</span>
+                        <h5>{{$post->name}}</h5>
+                        <span>{{$post->price}}</span>
                      </div>
-                     <div class="item">
-                        <figure>
-                           <a href=""><img src="img/Canon_EOS_400D.png" class="w-100" /></a>
-                        </figure>
-                        <h5>canon 55mmSTM</h5>
-                        <span>1,200,000 تومان</span>
-                     </div>
-                     <div class="item">
-                        <figure>
-                           <a href=""><img src="img/Canon_EOS_400D.png" class="w-100" /></a>
-                        </figure>
-                        <h5>canon S-500</h5>
-                        <span>1,200,000 تومان</span>
-                     </div>
-                     <div class="item">
-                        <figure>
-                           <a href=""><img src="img/Canon_EOS_400D.png" class="w-100" /></a>
-                        </figure>
-                        <h5>Canon_EOS_400D</h5>
-                        <span>1,200,000 تومان</span>
-                     </div>
-                     <div class="item">
-                        <figure>
-                           <a href=""><img src="img/Canon_EOS_400D.png" class="w-100" /></a>
-                        </figure>
-                        <h5>canon d10</h5>
-                        <span>1,200,000 تومان</span>
-                     </div>
+                     @endif
+                     @endforeach
+                     @endforeach
                   </div>
                </div>
             </div>
@@ -138,58 +108,24 @@
          <div class="row">
             <div class="col-md-12">
                <div class="two-slider">
-                  <h4>موبایل و تبلت</h4>
-                  <div class="owl-carousel owl-theme ov2">
+                 <h4>{{$idea_2}}</h4>
+                 <div class="owl-carousel owl-theme ov2">
+                   @foreach($posts as $post)
+                   @foreach ($post->categories()->pluck('name') as $cate)
+                     @if($cate == $idea_2)
                      <div class="item">
                         <figure>
-                           <a href=""><img src="img/p20lite-listimage-black.png" class="w-100" /></a>
+                           <a href="{{route('post_page' ,$post->id)}}">
+                             <img src="{{ asset($post->image) }}" class="w-100" />
+                           </a>
                         </figure>
-                        <h5>Samsung 500</h5>
-                        <span>1,200,000 تومان</span>
+                        <h5>{{$post->name}}</h5>
+                        <span>{{$post->price}}</span>
                      </div>
-                     <div class="item">
-                        <figure>
-                           <a href=""><img src="img/p20lite-listimage-black.png" class="w-100" /></a>
-                        </figure>
-                        <h5>Samsung 500</h5>
-                        <span>1,200,000 تومان</span>
-                     </div>
-                     <div class="item">
-                        <figure>
-                           <a href=""><img src="img/p20lite-listimage-black.png" class="w-100" /></a>
-                        </figure>
-                        <h5>Samsung 500</h5>
-                        <span>1,200,000 تومان</span>
-                     </div>
-                     <div class="item">
-                        <figure>
-                           <a href=""><img src="img/p20lite-listimage-black.png" class="w-100" /></a>
-                        </figure>
-                        <h5>Samsung 500</h5>
-                        <span>1,200,000 تومان</span>
-                     </div>
-                     <div class="item">
-                        <figure>
-                           <a href=""><img src="img/p20lite-listimage-black.png" class="w-100" /></a>
-                        </figure>
-                        <h5>Samsung 500</h5>
-                        <span>1,200,000 تومان</span>
-                     </div>
-                     <div class="item">
-                        <figure>
-                           <a href=""><img src="img/p20lite-listimage-black.png" class="w-100" /></a>
-                        </figure>
-                        <h5>Samsung 500</h5>
-                        <span>1,200,000 تومان</span>
-                     </div>
-                     <div class="item">
-                        <figure>
-                           <a href=""><img src="img/p20lite-listimage-black.png" class="w-100" /></a>
-                        </figure>
-                        <h5>Samsung 500</h5>
-                        <span>1,200,000 تومان</span>
-                     </div>
-                  </div>
+                    @endif
+                    @endforeach
+                    @endforeach
+                 </div>
                </div>
             </div>
          </div>
@@ -290,51 +226,29 @@
       <!---------------------------------->
       <div class="container">
          <div class="row">
+           @foreach($posts as $post)
             <div class="col-md-4">
                <div class="blog-content">
                   <figure>
-                     <img src="img/off/watch/1.jpg" class="w-100">
+                     <img width="200" height="200" src="{{asset($post->image)}}" class="w-100">
                   </figure>
-                  <h5><i class="fa fa-title"></i>گوشی هوشمند جیبی</h5>
-                  <p>گوشی هوشمند جیبی تکنولوژی جدید کمپانی اپل،با خاصیت ضد آب بودن و حمل بسیار مخفی،باقابلیت حمل داخل گوش...</p>
+                  <h5><i class="fa fa-title"></i>{{ $post->name }}</h5>
+                  <div>{!! $post->discription !!}</div>
                   <ul>
-                     <li><i class="fa fa-bars"></i>دسته بندی : تکنولوژی</li>
-                     <li><i class="fa fa-calendar-o"></i>نوشته شده در : 97/10/20</li>
-                     <li><i class="fa fa-user-o"></i>نویسنده : سئو 90</li>
+                     <li>
+                       <i class="fa fa-bars"></i>
+                       <span>دسته بندی :</span>
+                       @foreach ($post->categories()->pluck('name') as $cate)
+                       <span>{{ $cate }}</span>/
+                       @endforeach
+                     </li>
+                     <li><i class="fa fa-calendar-o"></i>نوشته شده در : {{ new Verta($post->created_at); }}</li>
+                     <!-- <li><i class="fa fa-user-o"></i>نویسنده : سئو 90</li> -->
                   </ul>
                   <a href="#" class="mybtn"><i class="fa fa-continuous"></i>ادامه مطلب&raquo;</a>
                </div>
             </div>
-            <div class="col-md-4">
-               <div class="blog-content">
-                  <figure>
-                     <img src="img/off/watch/1.jpg" class="w-100">
-                  </figure>
-                  <h5><i class="fa fa-title"></i>گوشی هوشمند جیبی</h5>
-                  <p>گوشی هوشمند جیبی تکنولوژی جدید کمپانی اپل،با خاصیت ضد آب بودن و حمل بسیار مخفی،باقابلیت حمل داخل گوش...</p>
-                  <ul>
-                     <li><i class="fa fa-bars"></i>دسته بندی : تکنولوژی</li>
-                     <li><i class="fa fa-calendar-o"></i>نوشته شده در : 97/10/20</li>
-                     <li><i class="fa fa-user-o"></i>نویسنده : سئو 90</li>
-                  </ul>
-                  <a href="#" class="mybtn"><i class="fa fa-continuous"></i>ادامه مطلب&raquo;</a>
-               </div>
-            </div>
-            <div class="col-md-4">
-               <div class="blog-content">
-                  <figure>
-                     <img src="img/off/watch/1.jpg" class="w-100">
-                  </figure>
-                  <h5><i class="fa fa-title"></i>گوشی هوشمند جیبی</h5>
-                  <p>گوشی هوشمند جیبی تکنولوژی جدید کمپانی اپل،با خاصیت ضد آب بودن و حمل بسیار مخفی،باقابلیت حمل داخل گوش...</p>
-                  <ul>
-                     <li><i class="fa fa-bars"></i>دسته بندی : تکنولوژی</li>
-                     <li><i class="fa fa-calendar-o"></i>نوشته شده در : 97/10/20</li>
-                     <li><i class="fa fa-user-o"></i>نویسنده : سئو 90</li>
-                  </ul>
-                  <a href="#" class="mybtn"><i class="fa fa-continuous"></i>ادامه مطلب&raquo;</a>
-               </div>
-            </div>
+           @endforeach
          </div>
       </div>
       <!---------------------------------->

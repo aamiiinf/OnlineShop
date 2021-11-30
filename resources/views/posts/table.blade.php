@@ -30,7 +30,12 @@
                         <td>{{ $post->body }}</td>
                         <td>
                             @foreach ($post->categories()->pluck('name') as $cate)
-                                <span class="badge badge-warning">{{ $cate }}</span>
+                              <span class="badge badge-secondary"
+                                @if(app()->getLocale()=='en')
+                                dir="rtl"
+                                @endif
+                                >{{ $cate }}
+                              </span>
                             @endforeach
                         </td>
                         <td>
@@ -48,7 +53,7 @@
                             @endif
                         </td>
                         <td>{{ $post->hit }}</td>
-                        <td><img class="rounded-circle" height="40" src="{{ asset($post->image) }}"></td>
+                        <td><img class="rounded-circle" height="40" width="40" src="{{ asset($post->image) }}"></td>
                         <td width="120">
                             {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'delete']) !!}
                             <div class='btn-group'>

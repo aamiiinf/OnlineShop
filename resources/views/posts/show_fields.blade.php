@@ -189,7 +189,12 @@
             bg-secondary
             @endif">
     <label class="text-dark">{{__('created_at')}}:</label>
+    @if(app()->getLocale()=='en')
     <p>{{ $post->created_at }}</p>
+    @endif
+    @if(app()->getLocale()=='fa')
+    <p>{{ new Verta($post->created_at); }}</p>
+    @endif
 </div>
 
 <!-- Updated At Field -->
@@ -198,5 +203,10 @@
             bg-secondary
             @endif">
     <label class="text-dark">{{__('updated_at')}}:</label>
+    @if(app()->getLocale()=='en')
     <p>{{ $post->updated_at }}</p>
+    @endif
+    @if(app()->getLocale()=='fa')
+    <p>{{ new Verta($post->updated_at); }}</p>
+    @endif
 </div>

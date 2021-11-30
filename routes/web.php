@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('main');
-Route::get('/post/{id}', [App\Http\Controllers\MainController::class, 'post'])->name('post_page');
+Route::get('/page/{id}', [App\Http\Controllers\MainController::class, 'post'])->name('post_page');
 Route::get('/category/{id}', [App\Http\Controllers\MainController::class, 'category'])->name('category_page');
 Route::get('/tag/{id}', [App\Http\Controllers\MainController::class, 'tag'])->name('tag_page');
 Route::get('/contact', [App\Http\Controllers\MainController::class, 'contact'])->name('contact');
@@ -49,6 +49,10 @@ Route::middleware('checkrole')->prefix('/admin')->group(function() {
     Route::get('/setting', [App\Http\Controllers\SettingController::class, 'index'])->name('setting');
 
     Route::post('/setting/{id}', [App\Http\Controllers\SettingController::class, 'update'])->name('up_setting');
+
+    Route::get('/management', [App\Http\Controllers\ManagementController::class, 'index'])->name('management');
+
+    Route::post('/management/{id}', [App\Http\Controllers\ManagementController::class, 'update'])->name('up_management');
 
     Route::resource('posts', App\Http\Controllers\PostController::class);
 

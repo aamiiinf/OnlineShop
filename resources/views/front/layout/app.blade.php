@@ -9,6 +9,9 @@
       <link href="{{ asset('style/owl.theme.default.css') }}" rel="stylesheet" type="text/css">
       <link href="{{ asset('style/style.css') }}" rel="stylesheet" type="text/css">
       <link type="text/css" href="{{ asset('css/style_cart.css') }}" rel="stylesheet" />
+      <link rel="stylesheet" href="{{ asset('carouseria-src/carouseria.min.css') }}">
+      <link rel="stylesheet" href="{{ asset('front/css/index.css') }}">
+      <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
    </head>
    <body>
       <div class="social">
@@ -143,6 +146,30 @@
     <script src="{{ asset('js/bootstrap.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/owl.carousel.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/js.js') }}" type="text/javascript"></script>
-    <script  src="{{ asset('js/scripts_cart.js') }}"></script>
+    <script src="{{ asset('js/scripts_cart.js') }}"></script>
+    <script src="{{ asset('carouseria-src/carouseria.min.js') }}" type="application/javascript"></script>
+    <script>
+    // CÓDIGO DE INICIALIZAÇÃO DO CAROUSEL
+    setCarousel("250px true vertical false true true");
+
+    // CÓDIGO PARA CUSTOMIZAÇÃO NA PÁGINA 'INDEX' APENAS
+    function contCheck(){setTimeout(()=>{var e=document.getElementById("carouseria").querySelector('[count="0"]'),
+    t=document.getElementById("carouseria").querySelector('[count="1"]');e.style.opacity>0?(document.getElementById("c2_1")
+    .disabled=!0,document.getElementById("c2_2").disabled=!0,document.getElementById("c1_1").disabled=!1,
+    document.getElementById("c1_2").disabled=!1):t.style.opacity>0?(document.getElementById("c1_1").disabled=!0,
+    document.getElementById("c1_2").disabled=!0,document.getElementById("c2_1").disabled=!1,document.getElementById("c2_2")
+    .disabled=!1):(document.getElementById("c1_1").disabled=!0,document.getElementById("c1_2").disabled=!0,
+    document.getElementById("c2_1").disabled=!0,document.getElementById("c2_2").disabled=!0)},300)}contCheck();
+    function evenLis(){for(var c=0;c<indexContentChild.length;c++)indexContentChild[c].addEventListener("click",
+    ()=>{contCheck()});for(var d=0;d<navContent.querySelectorAll('span').length;d++)navContent.querySelectorAll('span')[d]
+    .addEventListener("click",()=>{contCheck()})}evenLis();function setForm(){var formItems={};var formShort=document
+    .getElementById("tweakForm").elements;var queryline;for(var g=0;g<formShort.length;g++){if(formShort[g].name!="")
+    formItems[formShort[g].name]=formShort[g].value}queryline=formItems.contHeight+formItems.contUnit+" ";queryline+=formItems.loopTf+" ";
+    queryline+=formItems.movementDir+" ";queryline+=formItems.autoplayTf;queryline+=(formItems.autoplayTf=="true")?
+    "|"+formItems.autoplayMilisec+" ":" ";queryline+=formItems.indexTf;queryline+=(formItems.indexTf=="true" && formItems.indexDir!="horizontal")?
+    "|"+formItems.indexDir+" ":" ";queryline+=formItems.navTf;queryline+=(formItems.navTf=="true" && formItems.navDir!="horizontal")?
+    "|"+formItems.navDir+" ":"";document.getElementById("SHOWQUERY").innerHTML="setCarousel(\""+queryline+"\")";setCarousel(queryline)}
+    function resetForm(){document.getElementById("tweakForm").reset();}resetForm();
+    </script>
     </body>
     </html>

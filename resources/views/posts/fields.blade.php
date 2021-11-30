@@ -67,12 +67,14 @@
 <!-- Category Field -->
 <div class="form-group col-sm-6">
     <label>{{__('categories')}}</label>
-    <select class="form-control chosen-select" multiple name="categories[]">
+    <select class="form-control" name="categories[]">
         @foreach ($categories as $cat_id => $cat_name)
-            <option value="{{$cat_id}}"
-            <?php if (in_array($cat_id, $post->categories->pluck('id')->toArray())) {
-                    echo 'selected';
-                  } ?>>{{ $cat_name }}</option>
+            <option style="color:	#2F4F4F" value="{{$cat_id}}"
+              <?php if (in_array($cat_id, $post->categories->pluck('id')->toArray()))
+              {
+                echo 'selected';
+              }
+              ?>>{{ $cat_name }}</option>
         @endforeach
     </select>
 </div>
@@ -82,7 +84,7 @@
     <label>{{__('tags')}}</label>
     <select class="form-control chosen-select" multiple name="tags[]">
         @foreach ($tags as $tag_id => $tag_name)
-            <option value="{{$tag_id}}"
+            <option style="color:	#2F4F4F" value="{{$tag_id}}"
             <?php if (in_array($cat_id, $post->tags->pluck('id')->toArray())) {
                     echo 'selected';
                   } ?>>{{ $tag_name }}</option>

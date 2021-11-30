@@ -22,7 +22,9 @@
     <select class="form-control custom-select" name="parent_id">
       <option value="0">{{__('new_category')}}</option>
       @foreach($categories as $category)
+      @if($category->parent_id == 0)
       <option value="{{ $category->id }}">{{ $category->name }}</option>
+      @endif
       @endforeach
     </select>
 </div>

@@ -95,7 +95,7 @@ class SettingController extends Controller
         $setting->update($request->all());
 
         if ($locale->lang == 'fa') {
-          Flash::error('تنظیمات با موفقیت بروز شد.');
+          Flash::success('تنظیمات با موفقیت بروز شد.');
         }
 
         if ($locale->lang == 'en') {

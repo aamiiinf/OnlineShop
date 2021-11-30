@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 // use App\Models\User;
 use App\Models\Setting;
+use App\Models\Management;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\Comment;
@@ -22,35 +23,45 @@ class MainController extends Controller
         $subcategories = Category::with('parent')->whereNotNull('parent_id')->get();
         $tags = Tag::all();
         $posts = Post::all();
+        $management = Management::find(1);
+        $idea_1 = $management->slider_mangement_1;
+        $idea_2 = $management->slider_mangement_2;
+        $idea_3 = json_decode($management->slider_mangement_3);
 
-        return view('front/index', compact('setting', 'categories', 'tags', 'posts', 'subcategories'));
+        return view('front/index', compact(
+          'idea_1',
+          'idea_2',
+          'idea_3',
+          'setting',
+          'categories',
+          'tags',
+          'posts',
+          'subcategories'
+        ));
     }
 
     public function post($id)
     {
         $categories = Category::all();
+        $subcategories = Category::with('parent')->whereNotNull('parent_id')->get();
+        $setting = Setting::find(1);
         $comments = Comment::all();
         $tags = Tag::all();
         $posts = Post::all();
-        $posts_a = Post::orderBy('id', 'DESC')->paginate(10);
-        $setting = Setting::find(1);
-        $post_dd = Post::find($id);
         $post = Post::find($id);
         $post->hit +=1;
         $post->update();
-        $posts_category = $post_dd->categories()->pluck('name');
-        $v = new Verta($post_dd->created_at);
+        $posts_category = $post->categories()->pluck('name');
 
-        return view('front/single-page', compact(
-          'post_dd',
+        return view('front/single', compact(
+          'subcategories',
           'categories',
+          'comments',
           'setting',
           'tags',
           'posts',
-          'posts_a',
-          'posts_category',
-          'comments',
-          'v'
+          'post',
+          'posts_category'
         ));
     }
 

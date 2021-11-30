@@ -30,11 +30,21 @@
 <!-- Created At Field -->
 <div class="col-sm-12">
     <label>{{__('created_at')}}</label>
+    @if(app()->getLocale()=='en')
     <p>{{ $tag->created_at }}</p>
+    @endif
+    @if(app()->getLocale()=='fa')
+    <p>{{ new Verta($tag->created_at); }}</p>
+    @endif
 </div>
 
 <!-- Updated At Field -->
 <div class="col-sm-12">
     <label>{{__('updated_at')}}</label>
+    @if(app()->getLocale()=='en')
     <p>{{ $tag->updated_at }}</p>
+    @endif
+    @if(app()->getLocale()=='fa')
+    <p>{{ new Verta($tag->updated_at); }}</p>
+    @endif
 </div>

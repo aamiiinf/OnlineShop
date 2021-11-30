@@ -28,6 +28,20 @@
 </li>
 
 <li class="nav-item">
+    <a href="{{ route('management') }}"
+        class="nav-link mr-1 {{ Request::is('*management*') ? 'active' : '' }}">
+        @if(app()->getLocale()=='fa')
+        <i class="fas fa-tasks" style="font-size:17px"></i>
+        <p class="mx-2">مدیریت</p>
+        @endif
+        @if(app()->getLocale()=='en')
+        <p class="mx-2">Management</p>
+        <i class="fas fa-tasks"></i>
+        @endif
+    </a>
+</li>
+
+<li class="nav-item">
     <a href="{{ route('reports') }}"
         class="nav-link mr-1 {{ Request::is('*reports*') ? 'active' : '' }}">
         @if(app()->getLocale()=='fa')
