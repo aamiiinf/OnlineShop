@@ -146,93 +146,12 @@
 
 
 
-      <section class="col-lg-12 connectedSortable mt-3">
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">محصولات تازه اضافه شده</h3>
-
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-widget="collapse">
-                <i class="fa fa-minus"></i>
-              </button>
-              <button type="button" class="btn btn-tool" data-widget="remove">
-                <i class="fa fa-times"></i>
-              </button>
-            </div>
-          </div>
-          <!-- /.card-header -->
-          <div class="card-body p-0">
-            <ul class="products-list product-list-in-card pl-2 pr-2">
-              <li class="item">
-                <div class="product-img">
-                  <img src="{{ asset('dist/img/default-150x150.png') }}" alt="Product Image" class="img-size-50">
-                </div>
-                <div class="product-info">
-                  <a href="javascript:void(0)" class="product-title">تلویزیون سامسونگ
-                    <span class="badge badge-warning float-left">تومان 1800</span></a>
-                  <span class="product-description">
-                    سامسونگ ۳۲ اینچی، ال ای دی و سالم
-                  </span>
-                </div>
-              </li>
-              <!-- /.item -->
-              <li class="item">
-                <div class="product-img">
-                  <img src="{{ asset('dist/img/default-150x150.png') }}" alt="Product Image" class="img-size-50">
-                </div>
-                <div class="product-info">
-                  <a href="javascript:void(0)" class="product-title">دوچرخه
-                    <span class="badge badge-info float-left">تومان 700</span></a>
-                  <span class="product-description">
-                     دوچرخه ۲۶، کاملا اسپورت و کوهستانی
-                  </span>
-                </div>
-              </li>
-              <!-- /.item -->
-              <li class="item">
-                <div class="product-img">
-                  <img src="{{ asset('dist/img/default-150x150.png') }}" alt="Product Image" class="img-size-50">
-                </div>
-                <div class="product-info">
-                  <a href="javascript:void(0)" class="product-title">
-                    ایکس‌ باکس <span class="badge badge-danger float-left">
-                    تومان 350
-                  </span>
-                  </a>
-                  <span class="product-description">
-                    کنسول ایکس باکس برای بازی های توپ و باحال
-                  </span>
-                </div>
-              </li>
-              <!-- /.item -->
-              <li class="item">
-                <div class="product-img">
-                  <img src="{{ asset('dist/img/default-150x150.png') }}" alt="Product Image" class="img-size-50">
-                </div>
-                <div class="product-info">
-                  <a href="javascript:void(0)" class="product-title">پلی استیشن 4
-                    <span class="badge badge-success float-left">$399</span></a>
-                  <span class="product-description">
-                    پلی استیشن ۴ با ۳۰۰ گیگ حافظه داخلی
-                  </span>
-                </div>
-              </li>
-              <!-- /.item -->
-            </ul>
-          </div>
-          <!-- /.card-body -->
-          <div class="card-footer text-center">
-            <a href="javascript:void(0)" class="uppercase">نمایش همه محصولات</a>
-          </div>
-          <!-- /.card-footer -->
-        </div>
-      </section>
     </div>
     <!-- Main content -->
-    <section class="content pt-5">
+    <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-lg-12">
             <div class="card">
               <div class="card-header no-border">
                 <div class="d-flex justify-content-between">
@@ -272,118 +191,9 @@
             </div>
             <!-- /.card -->
 
-            <div class="card">
-              <div class="card-header no-border">
-                <h3 class="card-title">محصولات</h3>
-                <div class="card-tools">
-                  <a href="#" class="btn btn-tool btn-sm">
-                    <i class="fa fa-download"></i>
-                  </a>
-                  <a href="#" class="btn btn-tool btn-sm">
-                    <i class="fa fa-bars"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="card-body p-0">
-                <table class="table table-striped table-valign-middle">
-                  <thead>
-                  <tr>
-                    <th>محصولات</th>
-                    <th>قیمت</th>
-                    <th>فروش</th>
-                    <th>بیشتر</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td>
-                      <img src="{{ asset('dist/img/default-150x150.png') }}"
-                      alt="Product 1" class="img-circle img-size-32 mr-2">
-                      تلویزیون هوشمند
-                    </td>
-                    <td>13 تومان</td>
-                    <td>
-                      <small class="text-success mr-1">
-                        <i class="fa fa-arrow-up"></i>
-                        12%
-                      </small>
-                      12,000 فروش
-                    </td>
-                    <td>
-                      <a href="#" class="text-muted">
-                        <i class="fa fa-search"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img src="{{ asset('dist/img/default-150x150.png') }}"
-                      alt="Product 1" class="img-circle img-size-32 mr-2">
-                      محصول ایکس
-                    </td>
-                    <td>29 تومان</td>
-                    <td>
-                      <small class="text-warning mr-1">
-                        <i class="fa fa-arrow-down"></i>
-                        0.5%
-                      </small>
-                      123,234 فروش
-                    </td>
-                    <td>
-                      <a href="#" class="text-muted">
-                        <i class="fa fa-search"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img src="{{ asset('dist/img/default-150x150.png') }}"
-                      alt="Product 1" class="img-circle img-size-32 mr-2">
-                      محصول پرفروش
-                    </td>
-                    <td>1,230 تومان</td>
-                    <td>
-                      <small class="text-danger mr-1">
-                        <i class="fa fa-arrow-down"></i>
-                        3%
-                      </small>
-                      198 فروش
-                    </td>
-                    <td>
-                      <a href="#" class="text-muted">
-                        <i class="fa fa-search"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img src="{{ asset('dist/img/default-150x150.png') }}"
-                      alt="Product 1" class="img-circle img-size-32 mr-2">
-                      محصول جدید
-                      <span class="badge bg-danger">جدید</span>
-                    </td>
-                    <td>199 تومان</td>
-                    <td>
-                      <small class="text-success mr-1">
-                        <i class="fa fa-arrow-up"></i>
-                        63%
-                      </small>
-                      87 فروش
-                    </td>
-                    <td>
-                      <a href="#" class="text-muted">
-                        <i class="fa fa-search"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <!-- /.card -->
           </div>
           <!-- /.col-md-6 -->
-          <div class="col-lg-6">
+          <div class="col-lg-12">
             <div class="card">
               <div class="card-header no-border">
                 <div class="d-flex justify-content-between">
@@ -474,6 +284,101 @@
                 <!-- /.d-flex -->
               </div>
             </div>
+
+            <div class="card">
+              <div class="card-header border-transparent">
+                <h3 class="card-title">آخرین سفارشات</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="collapse">
+                    <i class="fa fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-widget="remove">
+                    <i class="fa fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table m-0">
+                    <thead>
+                    <tr>
+                      <th>ای دی محصول</th>
+                      <th>محصول</th>
+                      <th>وضعیت</th>
+                      <th>محبوبیت</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td><a href="pages/examples/invoice.html">OR9842</a></td>
+                      <td>بازی ندای وظیفه ۱۰</td>
+                      <td><span class="badge badge-success">ارسال شده</span></td>
+                      <td>
+                        <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="pages/examples/invoice.html">OR1848</a></td>
+                      <td>تلویزیون هوشمند سامسونگ</td>
+                      <td><span class="badge badge-warning">در حال پردازش</span></td>
+                      <td>
+                        <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="pages/examples/invoice.html">OR7429</a></td>
+                      <td>آیفون X max</td>
+                      <td><span class="badge badge-danger">تحویل داده شده</span></td>
+                      <td>
+                        <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="pages/examples/invoice.html">OR7429</a></td>
+                      <td>تلویزیون هوشمند سامسونگ</td>
+                      <td><span class="badge badge-info">در انتظار</span></td>
+                      <td>
+                        <div class="sparkbar" data-color="#00c0ef" data-height="20">90,80,-90,70,-61,83,63</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="pages/examples/invoice.html">OR1848</a></td>
+                      <td>تلویزیون هوشمند سامسونگ</td>
+                      <td><span class="badge badge-warning">در حال پردازش</span></td>
+                      <td>
+                        <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="pages/examples/invoice.html">OR7429</a></td>
+                      <td>آیفون X max</td>
+                      <td><span class="badge badge-danger">تحویل داده شده</span></td>
+                      <td>
+                        <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="pages/examples/invoice.html">OR9842</a></td>
+                      <td>بازی ندای وظیفه ۱۰</td>
+                      <td><span class="badge badge-success">ارسال شده</span></td>
+                      <td>
+                        <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.table-responsive -->
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer clearfix">
+                <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">سفارش جدید</a>
+                <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">مشاهده همه سفار</a>
+              </div>
+              <!-- /.card-footer -->
+            </div>
           </div>
           <!-- /.col-md-6 -->
         </div>
@@ -482,4 +387,5 @@
       <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+
 @endsection

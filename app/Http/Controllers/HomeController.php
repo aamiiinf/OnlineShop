@@ -36,48 +36,49 @@ class HomeController extends Controller
         $locale = Lang::find(1);
         App::setLocale($locale->lang);
         $is_online = count(User::online()->get());
+        $posts = Post::latest()->paginate(10);
 
-        return view('home', compact('user', 'setting', 'commends', 'works', 'post', 'is_online'));
+        return view('home', compact('user', 'setting', 'commends', 'works', 'post', 'is_online', 'posts'));
     }
 
-    public function online_user()
-    {
-      $setting = Setting::find(1);
-      $locale = Lang::find(1);
-      App::setLocale($locale->lang);
-      $online_users = User::online()->get();
-      $user_browser = visitor()->browser();
-      $user_platform = visitor()->platform();
+      public function online_user()
+      {
+        $setting = Setting::find(1);
+        $locale = Lang::find(1);
+        App::setLocale($locale->lang);
+        $online_users = User::online()->get();
+        $user_browser = visitor()->browser();
+        $user_platform = visitor()->platform();
 
-      return view('online_user', compact('setting', 'online_users', 'user_platform', 'user_browser'));
-    }
+        return view('online_user', compact('setting', 'online_users', 'user_platform', 'user_browser'));
+      }
 
-   public function visit()
-   {
-      $setting = Setting::find(1);
-      $locale = Lang::find(1);
-      App::setLocale($locale->lang);
+     public function visit()
+     {
+        $setting = Setting::find(1);
+        $locale = Lang::find(1);
+        App::setLocale($locale->lang);
 
-      return view('visits', compact('setting'));
-    }
+        return view('visits', compact('setting'));
+      }
 
-    public function reports()
-    {
-       $setting = Setting::find(1);
-       $locale = Lang::find(1);
-       App::setLocale($locale->lang);
+      public function reports()
+      {
+         $setting = Setting::find(1);
+         $locale = Lang::find(1);
+         App::setLocale($locale->lang);
 
-       return view('reports', compact('setting'));
-     }
+         return view('reports', compact('setting'));
+       }
 
 
-    public function calendar()
-    {
-      $locale = Lang::find(1);
-      App::setLocale($locale->lang);
-      $setting = Setting::find(1);
+      public function calendar()
+      {
+        $locale = Lang::find(1);
+        App::setLocale($locale->lang);
+        $setting = Setting::find(1);
 
-      return view('calendar', compact('setting'));
-    }
+        return view('calendar', compact('setting'));
+      }
 
 }
