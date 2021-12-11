@@ -15,11 +15,14 @@
         <!-- Small boxes (Stat box) -->
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box">
+            <div class="info-box"
+            @if($setting->color == 2)
+            style="background: #202020;"
+            @endif>
               <span class="info-box-icon bg-info elevation-1"><i class="fas fa-user-tie"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">افراد انلاین</span>
+                <span class="info-box-text">{{__('online_user')}}</span>
                 <span class="info-box-number">
                   {{ $is_online }}
                 </span>
@@ -30,11 +33,14 @@
           </div>
           <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box mb-3">
+            <div class="info-box mb-3"
+            @if($setting->color == 2)
+            style="background: #202020;"
+            @endif>
               <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-sticky-note"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">تعداد محصولات</span>
+                <span class="info-box-text">{{__('product')}}</span>
                 <span class="info-box-number">{{ $post }}</span>
               </div>
               <!-- /.info-box-content -->
@@ -47,11 +53,14 @@
           <div class="clearfix hidden-md-up"></div>
 
           <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box mb-3">
+            <div class="info-box mb-3"
+            @if($setting->color == 2)
+            style="background: #202020;"
+            @endif>
               <span class="info-box-icon bg-success elevation-1"><i class="fa fa-shopping-cart"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">فروش</span>
+                <span class="info-box-text">{{__('sale')}}</span>
                 <span class="info-box-number">760</span>
               </div>
               <!-- /.info-box-content -->
@@ -60,11 +69,14 @@
           </div>
           <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box mb-3">
+            <div class="info-box mb-3"
+            @if($setting->color == 2)
+            style="background: #202020;"
+            @endif>
               <span class="info-box-icon bg-warning elevation-1"><i class="fa fa-users"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">تعداد اعضا</span>
+                <span class="info-box-text">{{__('number_of_members')}}</span>
                 <span class="info-box-number">{{ $user }}</span>
               </div>
               <!-- /.info-box-content -->
@@ -206,9 +218,12 @@
 
 
           <section class="col-lg-12 connectedSortable mt-3">
-            <div class="card">
+            <div class="card"
+            @if($setting->color == 2)
+            style="background: #202020"
+            @endif>
               <div class="card-header">
-                <h3 class="card-title">محصولات تازه اضافه شده</h3>
+                <h3 class="card-title">{{__('products_added')}}</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
@@ -223,7 +238,10 @@
               <div class="card-body p-0">
                 <ul class="products-list product-list-in-card pl-2 pr-2">
                   @foreach($posts as $post)
-                  <li class="item">
+                  <li class="item"
+                  @if($setting->color == 2)
+                  style="background: #202020"
+                  @endif>
                     <div class="product-img">
                       <img src="{{ asset($post->image) }}" alt="Product Image" class="img-size-50">
                     </div>
@@ -241,7 +259,7 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer text-center">
-                <a href="{{ route('posts.index') }}" class="uppercase">نمایش همه محصولات</a>
+                <a href="{{ route('posts.index') }}" class="uppercase">{{__('all_products')}}</a>
               </div>
               <!-- /.card-footer -->
             </div>

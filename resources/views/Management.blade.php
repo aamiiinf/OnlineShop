@@ -6,7 +6,7 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1>مدیریت</h1>
+        <h1>{{__('management')}}</h1>
       </div>
     </div>
   </div><!-- /.container-fluid -->
@@ -21,7 +21,7 @@
     @csrf
     <div class="row mb-2 mt-4">
       <div class="mx-2">
-        <h5>مدیریت صفحه اصلی</h5>
+        <h5>{{__('home_management')}}</h5>
       </div>
     </div>
     <div class="row">
@@ -33,7 +33,7 @@
           <div class="card-header">
             <h3 class="card-title">
               <!-- {{__('number')}} -->
-              اسلایدر اصلی
+              {{__('main_slider')}}
             </h3>
             <div class="card-tools">
               <button type="button" class="btn btn-tool btn-sm" data-widget="collapse" data-toggle="tooltip"
@@ -71,7 +71,7 @@
           <div class="card-header">
             <h3 class="card-title">
               <!-- {{__('number')}} -->
-              slider1
+              {{__('slider_1')}}
             </h3>
             <div class="card-tools">
               <button type="button" class="btn btn-tool btn-sm" data-widget="collapse" data-toggle="tooltip"
@@ -104,7 +104,7 @@
           <div class="card-header">
             <h3 class="card-title">
               <!-- {{__('number')}} -->
-              slider2
+              {{__('slider_2')}}
             </h3>
             <div class="card-tools">
               <button type="button" class="btn btn-tool btn-sm" data-widget="collapse" data-toggle="tooltip"
