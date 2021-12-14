@@ -11,7 +11,7 @@
                   <a class="btn btn-default
                             @if(app()->getLocale()=='fa') float-left @endif
                             @if(app()->getLocale()=='en') float-right @endif"
-                     href="{{ route('tags.index') }}">
+                     href="{{ route('comments.index') }}">
                       {{__('back')}}
                   </a>
                 </div>

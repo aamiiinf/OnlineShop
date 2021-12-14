@@ -45,17 +45,7 @@ class SettingController extends Controller
 
             return redirect(route('setting'));
         }
-        if (empty($request->file)) {
-          if ($locale->lang == 'fa') {
-            Flash::error('فایل پیدا نشد');
-          }
 
-          if ($locale->lang == 'en') {
-            Flash::error('File not fuond');
-          }
-
-            return redirect(route('setting'));
-        }
         if (empty($request->google)) {
           if ($locale->lang == 'fa') {
             Flash::error('شناسه ردیابی Google Analytics پیدا نشد');

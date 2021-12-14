@@ -3,7 +3,7 @@
         <thead>
         <tr>
             <th>Title</th>
-        <th>Work</th>
+            <th>Work</th>
             <th colspan="3">Action</th>
         </tr>
         </thead>
@@ -11,7 +11,7 @@
         @foreach($works as $work)
             <tr>
                 <td>{{ $work->title }}</td>
-            <td>{{ $work->work }}</td>
+                <td>{{ $work->work }}</td>
                 <td width="120">
                     {!! Form::open(['route' => ['works.destroy', $work->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

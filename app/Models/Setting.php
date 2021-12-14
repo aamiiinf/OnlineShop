@@ -12,9 +12,12 @@ class Setting extends Model
     public $fillable = [
         'title',
         'discrption',
-        'file',
         'google',
         'email',
         'number'
+    ];
+
+    protected $attributes = [
+        'file' => 'a.png'
     ];
 }

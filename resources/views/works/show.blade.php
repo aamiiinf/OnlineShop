@@ -5,13 +5,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Work Details</h1>
+                    <h1>{{__('work_details')}}</h1>
                 </div>
                 <div class="col-sm-6">
                   <a class="btn btn-default
                             @if(app()->getLocale()=='fa') float-left @endif
                             @if(app()->getLocale()=='en') float-right @endif"
-                     href="{{ route('tags.index') }}">
+                     href="{{ route('works.index') }}">
                       {{__('back')}}
                   </a>
                 </div>

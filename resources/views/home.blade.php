@@ -319,8 +319,7 @@
                     </small>
                     <!-- General tools such as edit or delete-->
                     <div class="tools">
-                      <a href="{{ route('works.edit', [$work->id]) }}"><i class="fa fa-edit"></i></a>
-                      <i class="fa fa-trash-o"></i>
+                      <a href="{{ route('works.index', [$work->id]) }}"><i class="fa fa-eye" style="color:#444"></i></a>
                     </div>
                   </li>
                   @endforeach
